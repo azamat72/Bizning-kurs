@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Biz haqimizda
+{% endblock %}
+
+{% block content %}
+  
+<h2>Bosh sahifaga o'tmoqchi bo'lsangiz <a href="/">shu yerga</a> bosing</h2>
+    <ul>
+        {% for user in users %}
+        <li>{{user}}</li>
+        {% endfor %}
+      </ul>
+{% endblock content %}

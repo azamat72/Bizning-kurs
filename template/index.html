@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Bosh sahifa
+{% endblock %}
+
+
+  {% block content %}
+<div class="container text-white" style="float: right; padding-bottom: 20px;">
+  <h3>Yangi o'quvchi qo'shish</h3>
+  <a href="/create" type="submit" class="btn btn-info">Qo'shish</a>
+</div>
+  <div class="container">
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Familiyasi</th>
+          <th scope="col">Ismi</th>
+          <th scope="col">Yoshi</th>
+          <th scope="col">Treneri</th>
+        </tr>
+      </thead>
+     
+      <tbody>
+      {% for lead in leads %}
+      <div class="tcont countLines">
+        <tr>
+          <td><a href="/leads/{{ lead.pk }}/" class="text-white">{{lead.familiyasi}}</a></td>
+          <td>{{lead.ismi}}</td>
+          <td>{{lead.yoshi}}</td>
+          <td>{{lead.agent}}</td>
+        </tr>
+      </div>
+      {% endfor %}
+      </tbody>       
+    </table>
+    </div>
+  
+  
+{% endblock content %}
